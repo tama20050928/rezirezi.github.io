@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+html body {
+    margin: 0;
+    height: 100dvh;
+    max-height: 100dvh;
+}
+
+.PCdisplay {
+    display: none !important;
+}
+
+.mobiledisplay {
+    display: block !important;
+}
+
+
+#mainWindow {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+}
+
+/* モバイルファストによる画面構築 */
+
+#leftMenu,
+#orderList {
+    border: 1px solid #000000;
+
+}
+
+.maindiv {
+    border: solid 1px #000000;
+}
+
+
+
+#leftMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 20% 28.5% 28.5%;
+    gap: 1%;
+    padding: 2%;
+}
+
+#nowTimeDiv {
+    grid-column: 1/3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+    
+
+#clock {
+    position: absolute;
+    
+    font-size: 56px;
+}
+
+#estimatedTimeDiv {
+    padding: 2% 0 0 2% ;
+    grid-column: 1/3;
+    grid-row: 2;
+}
+
+#estimatedClock{
+    font-size: 32px;
+}
+
+#createOrderBtn {
+    grid-column: 1;
+    grid-row: 3;
+    font-size: 32px;
+}
+
+#showOrderLogBtn {
+    grid-column: 1;
+    grid-row: 4;
+    font-size: 32px;
+}
+
+
+
+#StatusDiv {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#orderInputDiv {
+    display: none;
+}
+
+#restCustomerDiv {
+    grid-column: 1;
+}
+
+#restFoodDiv {
+    grid-column: 2;
+}
+
+#orderList {
+    grid-column: 2;
+    grid-row: 3/5;
+    overflow-y: scroll;
+}
+
+
+
+
+#modalOverlay {
+    position: fixed;
+    /* Gridの影響を受けない */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明の背景 */
+
+    display: none;
+    /* 中央揃え  flex*/
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* 他要素より前面 */
+}
+
+/* モーダル本体 */
+#orderInputDiv {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    height: 40%;
+    min-width: 300px;
+    max-width: 90%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    /* 中央揃え  flex*/
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#orderPieceInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+#foodMinus,
+#foodPlus {
+    font-size: 32px;
+}
+
+#num {
+    border: #000000;
+    font-size: 36px;
+
+}
+
+#addOrderOption {
+    position: absolute;
+    bottom: 20px;
+}
+
+#addOrderOption button {
+    min-height: 50px;
+}
+
+#callnumber{
+    width: 80%;
+    font-size: 26px;
+}
+
+#closeOrderInputDiv {
+    position: absolute;
+
+    top: 10px;
+    right: 20px;
+    font-size: 32px;
+}
+
+.orderItem {
+
+
+    position: relative;
+    margin: 1%;
+    border: solid 1px #000000;
+    line-height: 10px;
+}
+
+#provideBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30%;
+    height: calc(100% - 20px);
+}
