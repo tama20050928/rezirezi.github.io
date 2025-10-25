@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+}
+
+header {
+    margin: 0;
+    height: 100px;
+    background-color: #00ff00;
+
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+
+    color: #ffffff;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100dvh - 100px);
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin : 5%;
+    border: 2px solid #666666;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90%;
+    height: 50%;
+    font-size: 26px;
+    
+}
+
+#userId{
+    width: 80%;
+    height: 26px;
+    font-size: 26px;
+}
+
+#loginAssign{
+    margin-top: 32px;
+    width: 50%;
+}

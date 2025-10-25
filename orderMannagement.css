@@ -1,0 +1,51 @@
+#leftMenu,
+        #orderList {
+            border: 1px solid #000000;
+        }
+
+        .maindiv {
+            border: solid 1px #000000;
+        }
+
+        #mainWindow {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+
+        #leftMenu {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        #nowTimeDiv {
+            grid-column: 1;
+            grid-row: 1/3;
+        }
+
+        #estimatedTimeDiv {
+            grid-column: 1;
+            grid-row: 3/5;
+        }
+
+        #StatusDiv {
+            grid-column: 2;
+            grid-row: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #orderInputDiv {
+            grid-column: 2;
+            grid-row: 2/5;
+        }
+
+        #restCustomerDiv {
+            grid-column: 1;
+        }
+
+        #restFoodDiv {
+            grid-column: 2;
+        }
