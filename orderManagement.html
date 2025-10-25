@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/orderMannagement.css">
+</head>
+
+<body>
+    <div id="mainWindow">
+
+        <div id="leftMenu">
+            <div class="maindiv" id="nowTimeDiv">
+                <p>現在時刻</p>
+                <div id="clock">--:--:--</div>
+            </div>
+            <div class="maindiv" id="estimatedTimeDiv">
+                <p>提供予想時間</p>
+                <div id="estimatedClock">--:--:--</div>
+            </div>
+            <div class="maindiv" id="StatusDiv">
+                <div id="restCustomerDiv">
+                    <p>
+                        残り<br>
+                        <span id="restCustomer">0</span>組<br>
+                        待ち
+                    </p>
+                </div>
+                <div id="restFoodDiv">
+                    <p>
+                        残り<br>
+                        <span id="restFood">0</span>食<br>
+                        待ち
+                    </p>
+                </div>
+            </div>
+            <div class="maindiv" id="orderInputDiv">
+                <h2>オーダー作成</h2>
+                <p>注文数</p>
+                <p>
+                    <input type="button" id="foodMinus" value="－">
+                    <span id="num">0</span>
+                    <input type="button" id="foodPlus" value="＋">
+                </p>
+                <p>
+                    <input type="button" id="addOrder" value="注文登録する">
+                </p>
+            </div>
+        </div>
+        <div id="orderList">
+
+        </div>
+    </div>
+
+    <script src="js/orderManagement.js">
+    </script>
+
+</body>
+
+</html>
