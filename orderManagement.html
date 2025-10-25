@@ -2,63 +2,81 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/orderManagement.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注文管理</title>
+  <link rel="stylesheet" href="css/orderManagement.css">
 </head>
 
 <body>
-    <div id="mainWindow">
+  <div id="mainWindow">
+    <!-- 左メニュー -->
+    <div id="leftMenu">
+      <div class="maindiv" id="nowTimeDiv">
+        
+        <div id="clock">--:--:--</div>
+      </div>
 
-        <div id="leftMenu">
-            <div class="maindiv" id="nowTimeDiv">
-                <p>現在時刻</p>
-                <div id="clock">--:--:--</div>
-            </div>
-            <div class="maindiv" id="estimatedTimeDiv">
-                <p>提供予想時間</p>
-                <div id="estimatedClock">--:--:--</div>
-            </div>
-            <div class="maindiv" id="StatusDiv">
-                <div id="restCustomerDiv">
-                    <p>
-                        残り<br>
-                        <span id="restCustomer">0</span>組<br>
-                        待ち
-                    </p>
-                </div>
-                <div id="restFoodDiv">
-                    <p>
-                        残り<br>
-                        <span id="restFood">0</span>食<br>
-                        待ち
-                    </p>
-                </div>
-            </div>
-            <div class="maindiv" id="orderInputDiv">
-                <h2>オーダー作成</h2>
-                <p>注文数</p>
-                <p>
-                    <input type="button" id="foodMinus" value="－">
-                    <span id="num">0</span>
-                    <input type="button" id="foodPlus" value="＋">
-                </p>
-                <p>
-                    <input type="button" id="addOrder" value="注文登録する">
-                </p>
-            </div>
+      <div class="maindiv" id="estimatedTimeDiv">
+        <p>提供予想時間</p>
+        <div id="estimatedClock">--:--:--</div>
+        <div id="StatusDiv" class = "Mobiledisplay">
+          <p>残り<span id="restCustomer">0</span>組待ち</p>
+          <p>残り<span id="restFood">0</span>食待ち</p>
         </div>
-        <div id="orderList">
+      </div>
 
+
+      <div class="maindiv PCdisplay" id="StatusDiv">
+        <div id="restCustomerDiv">
+          <p>残り<br><span id="restCustomer">0</span>組<br>待ち</p>
         </div>
+        <div id="restFoodDiv">
+          <p>残り<br><span id="restFood">0</span>食<br>待ち</p>
+        </div>
+      </div>
+      <div id="orderList" class="Mobiledisplay">
+        <h2>注文一覧</h2>
+        <div id="orderContainer"></div>
+      </div>
+
+      <button class="maindiv" id="createOrderBtn">オーダー作成</button>
+      <button class="maindiv" id="showOrderLogBtn">ログ表示</button>
+
+
+
     </div>
 
-    <script src="js/orderManagement.js">
-    </script>
+    <!-- 右側：注文一覧 -->
+    <div id="orderList" class="PCdisplay">
+      <h2>注文一覧</h2>
+      <div id="orderContainer"></div>
+    </div>
+  </div>
 
+  <div id="modalOverlay">
+    <div id="orderInputDiv">
+      <h2>オーダー作成</h2>
+      <div id="closeOrderInputDiv">×</div>
+      <p>注文数</p>
+      <div id="orderPieceInput">
+        <button id="foodMinus">－</button>
+        <div id="num">0</div>
+        <button id="foodPlus">＋</button>
+      </div>
+      <br>
+      受付番号<input type="number" required id="callnumber">
+      <div id="addOrderOption">
+        <button id="addOrderFinish">注文を登録する</button>
+        <button id="addOrderContinue">引き続き登録する</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- JSをモジュールとして読み込み -->
+  <script type="module" src="js/orderManagement.js"></script>
 </body>
 
-
 </html>
-
