@@ -335,3 +335,4 @@ addOrderContinueBtn?.addEventListener("click", async () => {
 document.getElementById("showOrderLogBtn")?.addEventListener("click", () => {
   window.location.href = "orderLog.html";
 });
+
