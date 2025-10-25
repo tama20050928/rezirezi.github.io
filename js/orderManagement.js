@@ -227,6 +227,8 @@ setInterval(() => {
 // Firestore 注文登録
 // ---------------------
 export async function addOrder(pieces, callNumber) {
+  const estimated = calculateEstimatedTime(allOrders.filter(o => !o.OfferFlag).reduce((sum, o) => sum + o.NumberOfPieces, 0) + pieces);
+
   const orderId = Math.floor(Math.random() * 1000000);
   const orderData = {
     OrganizeID: callNumber,
@@ -234,7 +236,7 @@ export async function addOrder(pieces, callNumber) {
     OfferFlag: false,
     OrderID: orderId,
     RealTime: serverTimestamp(),
-    ScheduleTime: new Date(),
+    ScheduleTime: estimated,
     UserID: userId,
   };
 
@@ -289,7 +291,7 @@ callNumberInput.addEventListener("input", () => {
 // ---------------------
 // 注文登録ボタン処理
 // ---------------------
-addOrderFinishBtn?.addEventListener("click", async () => {
+addOrderFinishBtn.addEventListener("click", async () => {
   const pieces = getCurrentNum();
   if (pieces <= 0) { alert("注文数を1以上にしてください"); return; }
 
@@ -309,7 +311,7 @@ addOrderFinishBtn?.addEventListener("click", async () => {
   closeAddOrder();
 });
 
-addOrderContinueBtn?.addEventListener("click", async () => {
+addOrderContinueBtn.addEventListener("click", async () => {
   const pieces = getCurrentNum();
   if (pieces <= 0) { alert("注文数を1以上にしてください"); return; }
 
@@ -335,4 +337,3 @@ addOrderContinueBtn?.addEventListener("click", async () => {
 document.getElementById("showOrderLogBtn")?.addEventListener("click", () => {
   window.location.href = "orderLog.html";
 });
-
